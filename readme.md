@@ -17,6 +17,11 @@ An ultra fast tiny model for lane detection, using onnx_parser, TensorRTAPI to a
 ```
 1) static（生成静态onnx模型）:
 python3 torch2onnx.py onnx_dynamic_int8/configs/tusimple_4.py --test_model ./tusimple_18.pth 
+python3 torch2onnx.py onnx_dynamic_int8/configs/tusimple_4.py --test_model /media/ros/A666B94D66B91F4D/ros/test_port/ufld_deploy/ufld_1205/ufld_build/UFLD_C++/ep182.pth
+# NETWORK 我直接用的tusimple的config了，改成了culane的配置
+backbone = '18'
+griding_num = 200
+use_aux = True
 
 2) dynamic（生成支持动态输入的onnx模型）:
 First: vim torch2onnx.py
